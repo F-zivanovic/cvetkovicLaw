@@ -1,0 +1,98 @@
+@use "../abstract/index" as *;
+
+.fixed__btn {
+  @include positioning(fixed, auto, 1rem, 1rem, auto);
+  transform: translateX(300px);
+  font-size: 14px;
+  background-color: $orange;
+  color: $darkBlue;
+  padding: 1rem;
+  text-transform: capitalize;
+  font-weight: bold;
+  border-radius: 0px 50px 50px 0px;
+  z-index: 1000;
+
+  &:hover {
+    color: $lightBlue;
+  }
+
+  &.active {
+    transform: translateX(0);
+  }
+}
+
+.section__title {
+  color: $orange;
+  text-transform: uppercase;
+  text-align: center;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  font-size: 2.5rem;
+
+  @include rwd(576) {
+    font-size: 2rem;
+  }
+
+  span {
+    color: $white;
+  }
+}
+
+.container,
+.container-lg {
+  width: 70%;
+  margin: auto;
+
+  @include rwd(576) {
+    width: 80%;
+  }
+}
+
+.container-lg {
+  width: 80%;
+}
+
+.calc {
+  color: $white;
+  background-color: $darkBlue;
+  text-align: center;
+
+  &__p {
+    margin: 1rem 0;
+    font-size: 1.3rem;
+  }
+}
+
+.table{
+
+  table{
+     width: 100%;
+
+     th{
+      background-color: $orange;
+      text-transform: uppercase;
+      text-align: left;
+      padding: 5px 10px;
+      font-size: 17px;
+     }
+
+     td{
+      font-size: 15px;
+      padding: 10px;
+     }
+  }
+}
+
+table{
+  margin-top: 3rem;
+  color: $white;
+}
+
+table, th, td{
+   border: 1px solid $white;
+  border-collapse: collapse;
+}
+
+table td{
+  padding: 7px 0;
+}

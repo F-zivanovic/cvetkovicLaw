@@ -1,0 +1,72 @@
+@use "../abstract/index" as *;
+
+.footer {
+  padding-top: 70px;
+  background-color: $darkBlue;
+
+  &__wrapper {
+    @include flex(space-between, flex-start);
+    margin-bottom: 70px;
+
+    @include rwd(1200) {
+      flex-direction: column;
+      row-gap: 2rem;
+    }
+  }
+
+  &__logo {
+    img {
+      width: 300px;
+      height: 100px;
+
+      @include rwd(576) {
+        width: 200px;
+      }
+    }
+  }
+
+  &__heading {
+    color: $orange;
+    text-transform: uppercase;
+    font-size: 1.5rem;
+  }
+
+  &__list {
+    color: $white;
+    margin-top: 1.5rem;
+
+    &__item {
+      &:not(:last-child) {
+        margin-bottom: 1rem;
+      }
+    }
+  }
+
+  &__list span {
+    margin-right: 0.5rem;
+  }
+
+  &__link {
+    color: $white;
+
+    &:hover {
+      color: $orange;
+    }
+  }
+
+  &__copy {
+    text-align: center;
+    padding: 1rem;
+    border-top: 1px solid $lightBlue;
+
+    p {
+      color: $white;
+      font-size: 15px;
+
+      a {
+        color: inherit;
+        text-decoration: underline;
+      }
+    }
+  }
+}

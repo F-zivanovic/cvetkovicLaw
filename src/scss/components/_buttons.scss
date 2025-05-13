@@ -1,0 +1,54 @@
+@use "../abstract/index" as *;
+
+.btn {
+  text-transform: capitalize;
+  border-radius: 5px;
+  font-weight: 600;
+  padding: 0.8rem 2rem;
+  cursor: pointer;
+  display: inline-block;
+  transition: 0.4s linear;
+  position: relative;
+  z-index: 1;
+  margin: 1.5rem 0;
+
+  @include rwd(576) {
+    padding: 0.8rem 1rem;
+    font-size: 0.9rem;
+  }
+
+  &:hover { color: $white; }
+
+  &:hover::after { width: 100%;}
+
+  &::after {
+    @include positioning(absolute, 0, auto, auto, 0, 0, 100%);
+
+    border-radius: 5px;
+    display: block;
+    content: "";
+    z-index: -1;
+    transition: 0.4s linear;
+  }
+}
+
+.btn-white {
+  background-color: $white;
+  color: $darkBlue;
+
+  &::after { background-color: $orange; }
+}
+
+.btn-orange {
+  background-color: $orange;
+  color: $white;
+
+  &::after { background-color: $royalBlue; }
+}
+
+.btn-light {
+  background-color: $lightBlue;
+  color: $darkBlue;
+
+  &::after { background-color: $orange; }
+}

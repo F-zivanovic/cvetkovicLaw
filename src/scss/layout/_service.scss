@@ -1,0 +1,40 @@
+@use "../abstract/index" as *;
+
+.service {
+  background-color: $darkBlue;
+
+  &__img {
+    width: 300px;
+
+    @include rwd(768) {
+      width: 200px;
+    }
+  }
+
+  &__p {
+    color: $white;
+    font-size: 1.1rem;
+    line-height: 2;
+    margin-top: 2rem;
+    text-align: justify;
+
+    @include rwd(768) {
+      line-height: 1.4;
+      font-size: 0.9rem;
+    }
+  }
+
+  &__btn {
+    display: flex;
+    gap: 1rem;
+    margin-top: 1.5rem;
+
+    @include rwd(650) {
+      flex-direction: column;
+    }
+
+    a {
+      margin: 0;
+    }
+  }
+}

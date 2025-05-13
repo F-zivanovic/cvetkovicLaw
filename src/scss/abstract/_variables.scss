@@ -1,0 +1,27 @@
+@use "sass:map";
+
+$royalBlue: #0a2d4e;
+$darkBlue: #061f36;
+$lightBlue: #c7def2;
+$orange: #ff7a00;
+$black: #0b0a0b;
+$white: #fff;
+
+$colors: (
+  "royalBlue": #0a2d4e,
+  "darkBlue": #061f36,
+  "lightBlue": #c7def2,
+  "orange": #ff7a00,
+  "black": #0b0a0b,
+  "white": #fff,
+);
+
+@each $key, $value in $colors {
+  .text-#{$key} {
+    color: #{$value};
+  }
+
+  .bg-#{$key} {
+    background-color: #{$value};
+  }
+}

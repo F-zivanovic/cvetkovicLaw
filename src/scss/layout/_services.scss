@@ -1,0 +1,42 @@
+@use "../abstract/index" as *;
+
+.services {
+  background-color: $darkBlue;
+
+  &__wrapper {
+    @include flex(space-between, stretch, wrap);
+    margin-top: 3rem;
+    row-gap: 2rem;
+  }
+
+  &__item {
+    flex: 0 0 47%;
+    border-radius: 10px;
+    border: 1px solid $orange;
+    padding: 2rem;
+
+    @include rwd(992) {
+      flex: 0 0 100%;
+    }
+  }
+
+  &__name {
+    text-transform: uppercase;
+    color: $lightBlue;
+  }
+
+  &__description {
+    margin: 3rem 0 1.5rem;
+    color: $white;
+  }
+
+  &__link {
+    color: $white;
+    text-transform: capitalize;
+    text-decoration: underline;
+
+    &:hover {
+      color: $orange;
+    }
+  }
+}

@@ -1,0 +1,122 @@
+@use "../abstract/index" as *;
+
+.nav {
+  background-color: $white;
+  position: relative;
+  padding: 10px 0;
+
+  &__wrapper {
+    @include flex(space-between, center);
+
+    // higher CSS sepcifity than fa-solid (display:block) class on icon
+    #hamburger,
+    #close{
+      font-size: 1.5rem;
+      color: $darkBlue;
+      display: none;
+      cursor: pointer;
+      transition: 0.4s linear;
+
+      &:hover {
+        color: $orange;
+      }
+
+      @include rwd(1300) {
+        display: block;
+      }
+    }
+
+    #close {
+
+      @include rwd(1200) {
+        position: absolute;
+        top: 1rem;
+        right: 1rem;
+        display: block;
+      }
+    }
+  }
+
+  &__logo {
+    img {
+      width: 270px;
+      height: 80px;
+
+      @include rwd(576) { width: 200px; }
+    }
+  }
+
+  &__list {
+    @include flex(flex-start, center, row, 1rem);
+
+    @include rwd(1300) {
+      @include positioning(fixed, 0, 0, auto, auto, 250px, 100%);
+      background-color: $lightBlue;
+      z-index: 999;
+      flex-direction: column;
+      align-items: flex-start;
+      padding: 2rem;
+      clip-path: polygon(100% 0, 100% 0, 100% 100%, 100% 100%);
+      transition: 0.4s linear;
+      overflow: auto;
+    }
+
+    &.open {
+      clip-path: polygon(100% 0, 0 0, 0 100%, 100% 100%);
+    }
+  }
+
+  &__item--dropdown {
+    position: relative;
+
+    &:hover > .nav__dropdown {
+      visibility: visible;
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  &__dropdown {
+    @include flex(flex-start, stretch, column, 1rem);
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: $darkBlue;
+    padding: 1rem;
+    width: 200px;
+    visibility: hidden;
+    opacity: 0;
+    transform: translateY(-10px);
+    transition: 0.4s linear;
+    z-index: 1000;
+    // TODO: PROVERI TRANZICIJU KADA SAMNJUJES/POVECAVAS EKRAN
+
+    @include rwd(1300) {
+      visibility: visible;
+      opacity: 1;
+      position: static;
+      transform: translateY(0);
+      background-color: inherit;
+      padding-left: 1rem;
+    }
+
+    &__link {
+      color: $white;
+      text-transform: capitalize;
+
+      @include rwd(1300) {
+        color: $darkBlue;
+      }
+    }
+  }
+
+  &__link {
+    color: $darkBlue;
+    text-transform: capitalize;
+
+    &--dropdown {
+      @include flex(flex-start, center, row, 5px);
+    }
+  }
+
+}

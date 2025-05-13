@@ -1,0 +1,44 @@
+@use "../../abstract/index" as *;
+
+.feature {
+  @include flex(flex-start, stretch, row wrap, 2rem);
+  margin: -190px auto 0;
+
+  @include rwd(992) {
+    display: none;
+  }
+
+  &__item {
+    background-color: $white;
+    box-shadow: 0px 2px 15px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    flex: 1;
+    padding: 1.5rem;
+
+    &--orange {
+      background-color: $orange;
+      // color: $white;
+      flex: 2;
+      font-weight: 500;
+
+      @include rwd(1200) {
+        flex: 0 0 100%;
+      }
+    }
+  }
+
+  &__heading {
+    margin: 1rem 0;
+    font-size: 1.5rem;
+  }
+
+  &__p {
+    font-size: 15px;
+    line-height: 1.5;
+  }
+
+  &__icon {
+    color: $orange;
+    font-size: 2rem;
+  }
+}

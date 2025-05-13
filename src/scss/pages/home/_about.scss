@@ -1,0 +1,22 @@
+@use "../../abstract/index" as *;
+
+.about {
+  position: relative;
+  padding: 120px 0;
+
+  &__img {
+    @include positioning(absolute, auto, 0, 0, auto, 350px, 500px);
+    opacity: 0.6;
+    z-index: -1;
+
+    @include rwd(768) { display: none; }
+  }
+
+  .about__p {
+    color: $white;
+    
+    margin-top: 1rem;
+    line-height: 2;
+    text-align: justify;
+  }
+}

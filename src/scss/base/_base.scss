@@ -1,0 +1,50 @@
+@use "../abstract/index" as *;
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  scroll-behavior: smooth;
+  list-style-type: none;
+  text-decoration: none;
+  border: none;
+  outline: none;
+  resize: none;
+  font-family: "Roboto", sans-serif;
+}
+
+body {
+  background-color: $royalBlue;
+  color: $black;
+
+  font-size: 100%;
+  overflow-x: hidden;
+  line-height: 1.4;
+
+  @include rwd(576) { font-size: 85%; }
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "Barlow Semi Condensed", sans-serif;
+  text-wrap: balance;
+}
+
+img {
+  max-width: 100%;
+  object-fit: cover;
+  vertical-align: middle;
+}
+
+section { padding: 70px 0; }
+
+a:focus,
+a:hover {
+  color: $orange;
+}
+
+a { transition: 0.4s linear; }

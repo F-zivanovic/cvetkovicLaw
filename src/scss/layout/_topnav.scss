@@ -1,0 +1,26 @@
+@use "../abstract/index" as *;
+
+.topnav {
+  background-color: $darkBlue;
+
+  height: 5vh;
+  line-height: 5vh;
+
+  @include rwd(992) {
+    display: none;
+  }
+
+  &__wrapper {
+    display: flex;
+    gap: 1.5rem;
+  }
+
+  &__link {
+    color: $white;
+  }
+
+  &__icon {
+    color: $orange;
+    margin-right: 7px;
+  }
+}
